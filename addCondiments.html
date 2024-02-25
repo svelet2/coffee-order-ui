@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Condiments</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+<body>
+        <!-- Header -->
+        <div class="container">
+            <a href="index.html" class="left-link">Coffee Order System</a>
+            <a href="orderStatus.html" class="right-link">Order Status</a>
+        </div>
+
+        <!-- Add Condiments Section -->
+        <h1 class="flex-parent jc-center margin-right">Add the condiments</h1>
+        <div class="flex-parent jc-center margin-right">
+            <button type="button" class="big-button left top" onclick="addToOrder('Milk', this)">Milk</button>
+            <button type="button" class="big-button top" onclick="addToOrder('Mocha', this)">Mocha</button>
+        </div>
+        <div class="flex-parent jc-center margin-right">
+            <button type="button" class="big-button left" onclick="addToOrder('Soy', this)">Soy</button>
+            <button type="button" class="big-button" onclick="addToOrder('Whip', this)">Whip</button>
+        </div>
+
+        <!-- Receipt Container -->
+        <div class="receipt-container flex-parent jc-center">
+            <div class="receipt">
+                <div class="order-label">My Order</div>
+                <div class="order-content"></div> <!-- Order content will be filled dynamically -->
+                <button class="confirm-btn" onclick="window.location.href='orderPlaced.html'">Confirm Order</button>
+            </div>
+        </div>
+
+    <script>
+        const orderContent = document.querySelector('.order-content');
+        <!-- Grab from previous page -->
+        const urlParams = new URLSearchParams(window.location.search);
+        const beverageValue = urlParams.get('beverage');
+
+        const bevItem = document.createElement('a');
+        bevItem.setAttribute('href', 'beverageSelection.html');
+        bevItem.classList.add('clickable-label');
+        bevItem.textContent = beverageValue;
+        bevItem.addEventListener('click', function() {
+            this.remove();
+        });
+        orderContent.appendChild(bevItem);
+
+        function addToOrder(item, button) {
+            const newItem = document.createElement('div');
+            newItem.classList.add('label');
+            newItem.textContent = item;
+            newItem.addEventListener('click', function() {
+                this.remove();
+
+                if (button) {
+                    button.disabled = false;
+                }
+            });
+            orderContent.appendChild(newItem);
+
+            // Disable the button after it's clicked
+            button.disabled = true;
+        }
+
+        function confirmOrder() {
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* Change to space-between to push links to opposite corners */
+    align-items: center;
+}
+.receipt-container {
+    float: right; /* Float the receipt container to the right */
+    margin-right: 350px; /* Adjust margin as needed */
+    position: relative; /* Set position to relative */
+    top: -450px; /* Adjust the value to move it up */
+}
+.left-link {
+    color: peachpuff;
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: auto; /* Push link to the left corner */
+}
+
+.right-link {
+    color: peachpuff;
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: auto; /* Push link to the right corner */
+}
+.container a {
+    color: peachpuff; /* Set color for all links */
+    text-decoration: none; /* Remove underline from all links */
+    margin-right: 20px; /* Add margin between links */
+    margin-bottom: 80px; /* Add margin between links */
+    font-size: 30px;
+}
+.container a:first-child {
+    color: darkslateblue; /* Change color of the first link */
+    font-size: 50px;
+}
+body {
+    background-color: rosybrown; /* Set the background color to a light blue */
+    font-family: Cochin;
+}
+.label {
+    font-size: 27px;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px; /* Add margin between labels */
+    text-align: center; /* Center the text inside the label */
+    background-color: lightsteelblue; /* Set the background color */
+    border-radius: 10px; /* Add rounded corners */
+}
+.order-label {
+    font-size: 30px;
+    color: darkslateblue;
+    margin-bottom: 30px; /* Add margin between labels */
+}
+button.left {
+    margin-right: 80px; /* Add margin to the right of the button */
+    margin-top: 0px; /* Add margin to the top of the button */
+}
+button.top {
+    margin-bottom: 80px; /* Add margin to the bottom of the button */
+    margin-top: 30px; /* Add margin to the top of the button */
+}
+button {
+    background-color: darkslateblue;
+    font-size: 35px;
+    font-family: Cochin;
+    color: pink;
+    outline-color: peachpuff;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+.flex-parent {
+    display: flex;
+}
+.jc-center {
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+}
+.clickable-label {
+    display: inline-block; /* or block */
+    padding: 5px 50px; /* Adjust padding as needed */
+    background-color: lightblue; /* Set background color */
+    color: black; /* Set text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 27px;
+    border-radius: 10px; /* Add rounded corners */
+    margin-bottom: 15px; /* Add margin between labels */
+}
+.big-button {
+    width: 300px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    margin: 5px;
+}
+.big-button:hover {
+    background-color: #3498db; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+.receipt {
+    position: relative;
+    padding: 20px;
+    background-color: #f2f2f2; /* Set the background color */
+    height: 450px;
+    width: 200px;
+    text-align: center;
+    border: 3px solid black;
+}
+.confirm-btn {
+    width: 90%;
+    padding: 10px;
+    font-size: 28px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 70px;
+    background-color: pink;
+    color: darkmagenta;
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom of the container */
+    left: 10px; /* Distance from the left of the container */
+}
+
+button:disabled {
+    color: #ccc; /* Change the text color */
+    background-color: #f2f2f2; /* Change the background color */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+}
+.confirm-btn:hover {
+    background-color: cornflowerblue; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+.margin-right {
+    margin-right: 600px;
+}
+.beverage-selection {
+    display: block;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: row; /* Change to row to display items next to each other */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items vertically */
+}
+
+.value {
+    font-size: 25px;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px; /* Add margin between labels */
+    margin-left: 10px; /* Add margin to the left of the value */
+    text-align: center; /* Center the text inside the label */
+    border-radius: 10px; /* Add rounded corners */
+    border: 1px solid black;
+}
