@@ -28,7 +28,7 @@
             <div class="receipt">
                 <div class="order-label">My Order</div>
                 <div class="order-content"></div> <!-- Order content will be filled dynamically -->
-                <button class="confirm-btn" onclick="window.location.href='orderPlaced.html'">Confirm Order</button>
+                <button class="confirm-btn" onclick="confirmOrder()">Confirm Order</button>
             </div>
         </div>
 
@@ -64,7 +64,39 @@
             button.disabled = true;
         }
 
-        function confirmOrder() {
+        async function confirmOrder() {
+            let host = "https://coffee-order-svelet2.onrender.com";
+
+            var toppings = document.getElementsByClassName('label');
+            console.log(toppings.item(0).textContent);
+
+            let condiments = [];
+            for (let i = 0; i < toppings.length; i++) {
+                condiments.push(toppings[i].textContent);
+            }
+            console.log(condiments);
+
+            let order = {
+                beverage: beverageValue,
+                condiments: condiments
+            };
+
+            let request = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(order)
+            };
+
+
+            let response = await fetch(host + "/orders", request);
+
+            let receipt = await response.json();
+            console.log(receipt);
+
+            window.location.href='orderPlaced.html?orderID=' + receipt.id + '&description=' + receipt.description
+                + '&total=' + receipt.cost;
 
         }
 

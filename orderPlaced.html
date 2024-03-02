@@ -16,16 +16,30 @@
     </div>
     <div class="label-container">
         <div class="label">Order ID:</div>
-        <div class="value">ID num</div>
+        <div class="value" id="orderID">ID num</div>
     </div>
     <div class="label-container">
         <div class="label">Description:</div>
-        <div class="value">text</div>
+        <div class="value" id="desc">text</div>
     </div>
     <div class="label-container">
         <div class="label">Total:</div>
-        <div class="value">$0.00</div>
+        <div class="value" id="total">$0.00</div>
     </div>
+
+
+    <script>
+        // Get the order ID from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('orderID');
+        const description = urlParams.get('description');
+        const total = urlParams.get('total');
+
+        // Set the order ID
+        document.getElementById('orderID').textContent = orderId;
+        document.getElementById('desc').textContent = description;
+        document.getElementById('total').textContent = "$" + total;
+    </script>
 
 </body>
 </html>
