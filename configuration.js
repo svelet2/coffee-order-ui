@@ -1,4 +1,4 @@
-const mode = 0;
+const mode = 1;
 
 const host_local = "http://localhost:8081";
 const host_remote = "https://coffee-order-svelet2.onrender.com";
